@@ -1,0 +1,104 @@
+<html>
+<head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.5;
+      color: #333;
+    	background-color: #F0F8FF;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    input[type="submit"] {
+      background-color: #4CAF50;
+      border: none;
+      color: black;
+      padding: 12px 24px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin-top: 10px;
+      cursor: pointer;
+      border-radius: 50px;
+    }
+    input[type="submit"]:hover {
+      background-color: #3e8e41;
+    }
+	.left{
+	  width: 30%;
+	  float: left;
+	}
+	iframe{
+	  width: 610px;
+	  height: 500px;
+	}
+	.clear{
+	  clear:both;
+	}
+  </style>
+</head>
+<body onload="document.forms[0].submit()">
+  <form action="gen.php" method="post" target="myFrame">
+	  <div class="left">
+		<div>
+		  <label>Number1</label>
+		  <input name="number1" type="number" />
+		</div>
+		<div>
+		  <label>Number2</label>
+		  <input name="number2" step="0.01" type="number" />
+		</div>
+		<div>
+		  <label>Text</label>
+		  <input name="text" type="text" />
+		</div>
+		<div>
+		  <label>Date</label>
+		  <input name="date" type="date" />
+		</div>
+		<div>
+		  <label>Time</label>
+		  <input name="time" type="time" />
+		</div>
+		<div>
+		  <input name="dodaj_dane" type="submit" value="Submit" />
+		</div>
+		<hr>
+		<div>
+		  <label>Generuj</label>
+		  <input name="gen_value" type="number" />
+		</div>
+		<div>
+		  <input name="generate" type="submit" value="Generuj" />
+		</div>
+		<hr>
+		<div>
+		  <input name="transfer" type="submit" value="Transfer" />
+		  <input name="verification" type="submit" value="Weryfikuj" />
+		</div>
+		<div>
+		  <input name="truncate1" type="submit" value="Wyczysc baze1" />
+		  <input name="truncate2" type="submit" value="Wyczysc baze2" />
+		</div>
+	  </div>
+	  <div>
+		<iframe name="myFrame"></iframe>
+	  </div>
+  </form>
+  <div class='clear'></div>
+  <form action="gen_rabbit_send.php" method="post" target="_blank">
+	<div>
+		<input name="transfer_rabbit" type="submit" value="Transfer RabbitMQ" />
+	</div>
+  </form>
+  <form action="gen_rabbit_receive.php" method="post" target="_blank">
+	<div>
+		<input name="run_receive" type="submit" value="Polaczenie RabbitMQ" />
+	</div>
+  </form>
+</body>
+</html>
